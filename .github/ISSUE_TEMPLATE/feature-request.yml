@@ -1,0 +1,42 @@
+name: Feature request
+description: Propose an improvement or new capability
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Protocol semantics, schemas, and conformance changes should be proposed in MissionWeaveProtocol.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What need is not adequately served today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest interface or protocol change that solves the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and interoperability impact
+      description: Note breaking changes, migrations, version negotiation, or effects on other implementations.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched for existing proposals covering this use case.
+          required: true
