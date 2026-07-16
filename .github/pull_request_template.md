@@ -24,4 +24,5 @@
 - [ ] Tests and documentation are updated where applicable.
 - [ ] Schemas and conformance vectors are updated for protocol changes.
 - [ ] Compatibility and security effects are stated explicitly.
+- [ ] The pull request title follows Conventional Commits 1.0.0.
 - [ ] No unrelated changes are included.

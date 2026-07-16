@@ -21,6 +21,27 @@ should then pin the resulting protocol commit or release in a separate change.
 5. Update tests, documentation, schemas, and vectors when applicable.
 6. State compatibility, migration, and security effects explicitly.
 
+## Pull request titles
+
+Pull request titles must follow
+[Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/):
+
+```text
+<type>[optional scope][!]: <description>
+```
+
+Use a lowercase type and, when present, a lowercase scope. MissionWeave does not impose a closed
+type list; `feat` and `fix` retain their Conventional Commits meaning, while types such as `docs`,
+`test`, `refactor`, `build`, and `chore` are also appropriate.
+
+Examples:
+
+```text
+feat(protocol): add capability negotiation
+fix(scheduler)!: reject stale ownership epochs
+docs: explain protocol version pinning
+```
+
 ## Review expectations
 
 Protocol changes should be implementation-neutral and include conformance evidence. Python changes

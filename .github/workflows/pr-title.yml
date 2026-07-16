@@ -1,0 +1,41 @@
+name: Conventional PR title
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, ready_for_review]
+  workflow_call:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate:
+    name: Validate title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Conventional Commits format
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          node <<'NODE'
+          const title = process.env.PR_TITLE ?? "";
+          const conventionalTitle = /^[a-z][a-z0-9-]*(?:\([a-z0-9._/-]+\))?!?: \S.*$/u;
+
+          if (conventionalTitle.test(title)) {
+            console.log(`Valid Conventional Commits title: ${title}`);
+            process.exit(0);
+          }
+
+          console.error(`Invalid pull request title: ${JSON.stringify(title)}`);
+          console.error("");
+          console.error("Expected: <type>[optional scope][!]: <description>");
+          console.error("");
+          console.error("Examples:");
+          console.error("  feat(scheduler): add weighted group fairness");
+          console.error("  fix!: reject stale session epochs");
+          console.error("  docs: explain protocol pinning");
+          console.error("");
+          console.error("Specification: https://www.conventionalcommits.org/en/v1.0.0/");
+          process.exit(1);
+          NODE
