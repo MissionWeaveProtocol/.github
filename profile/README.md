@@ -13,9 +13,9 @@ human approval.
 
 ## Repositories
 
-- [MissionWeaveProtocol](https://github.com/MissionWeaveProject/MissionWeaveProtocol) — normative
-  specification, glossary, JSON Schemas, conformance vectors, ADRs, and brand assets.
-- [MissionWeavePython](https://github.com/MissionWeaveProject/MissionWeavePython) — official Python
+- [missionweaveprotocol](https://github.com/MissionWeaveProject/missionweaveprotocol) — normative
+  specification, glossary, JSON Schemas, conformance vectors, and brand assets.
+- [python-sdk](https://github.com/MissionWeaveProject/python-sdk) — official Python
   reference implementation, Agent runtime, Group gateway, Worker Scheduler, conformance runner,
   storage adapters, and executable POC.
 

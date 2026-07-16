@@ -4,7 +4,7 @@
 
 ## Motivation
 
-<!-- Why is this needed? Link the relevant issue or ADR. -->
+<!-- Why is this needed? Link the relevant issue or design proposal. -->
 
 ## Validation
 
@@ -24,5 +24,6 @@
 - [ ] Tests and documentation are updated where applicable.
 - [ ] Schemas and conformance vectors are updated for protocol changes.
 - [ ] Compatibility and security effects are stated explicitly.
+- [ ] Repository names and terminology follow the current MissionWeave vocabulary.
 - [ ] The pull request title follows Conventional Commits 1.0.0.
 - [ ] No unrelated changes are included.

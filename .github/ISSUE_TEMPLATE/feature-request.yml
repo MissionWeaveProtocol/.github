@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Protocol semantics, schemas, and conformance changes should be proposed in MissionWeaveProtocol.
+        Protocol semantics, schemas, and conformance changes should be proposed in missionweaveprotocol.
   - type: textarea
     id: problem
     attributes:
