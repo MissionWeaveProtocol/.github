@@ -1,8 +1,8 @@
-# MissionWeave Code of Conduct
+# MissionWeaveProtocol Code of Conduct
 
 ## Our pledge
 
-We pledge to make participation in MissionWeave a harassment-free experience for everyone,
+We pledge to make participation in MissionWeaveProtocol a harassment-free experience for everyone,
 regardless of age, body size, disability, ethnicity, gender identity and expression, level of
 experience, education, socioeconomic status, nationality, personal appearance, race, religion, or
 sexual identity and orientation.
@@ -22,14 +22,14 @@ Maintainers may remove, edit, or reject contributions and may temporarily or per
 participation when behavior violates this code.
 
 Report conduct concerns privately through the
-[MissionWeave community repository](https://github.com/missionweaveprotocol/.github/security/advisories/new)
+[MissionWeaveProtocol community repository](https://github.com/missionweaveprotocol/.github/security/advisories/new)
 and begin the report title with `Conduct report`. Include relevant links or screenshots and avoid
 sharing sensitive details publicly. Maintainers will review reports confidentially, avoid conflicts
 of interest, and take proportionate action.
 
 ## Scope
 
-This code applies in project spaces and when an individual represents MissionWeave in public.
+This code applies in project spaces and when an individual represents MissionWeaveProtocol in public.
 
 ## Attribution
 

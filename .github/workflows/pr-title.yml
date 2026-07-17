@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Check Conventional Commits format
         env:
@@ -47,10 +45,8 @@ jobs:
 
       - name: Check repository vocabulary
         env:
-          BASE_REF: ${{ github.base_ref }}
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_BODY: ${{ github.event.pull_request.body }}
-          REPOSITORY: ${{ github.repository }}
         run: |
           node <<'NODE'
           const fs = require("fs");
@@ -70,21 +66,41 @@ jobs:
             },
             {
               label: "incomplete product display name",
-              pattern: new RegExp(`\\b${["Mission", "Weave"].join("")}\\b`, "u"),
-              trackedBootstrapRule: true,
-              rejectedExample: ["Mission", "Weave"].join(""),
-              allowedExample: ["Mission", "Weave", "Protocol"].join(""),
+              pattern: new RegExp(
+                `${["Mission", "Weave"].join("")}(?!Protocol)`,
+                "u",
+              ),
+              policyCases: {
+                rejected: [
+                  ["Mission", "Weave"].join(""),
+                  ["Mission", "Weave", "-CLI"].join(""),
+                  ["Mission", "Weave", "_ENV"].join(""),
+                  ["prefix", "Mission", "Weave", "Client"].join(""),
+                ],
+                allowed: [
+                  ["Mission", "Weave", "Protocol"].join(""),
+                  ["Mission", "Weave", "Protocol", "Client"].join(""),
+                ],
+              },
             },
             {
               label: "incomplete product machine identifier",
-              pattern: new RegExp(`\\b${["mission", "weave"].join("")}\\b`, "u"),
-              trackedBootstrapRule: true,
-              rejectedExample: ["mission", "weave"].join(""),
-              allowedExample: ["mission", "weave", "protocol"].join(""),
-            },
-            {
-              label: "retired Python repository name",
-              pattern: new RegExp(["Mission", "Weave", "Python"].join(""), "u"),
+              pattern: new RegExp(
+                `${["mission", "weave"].join("")}(?!protocol)`,
+                "u",
+              ),
+              policyCases: {
+                rejected: [
+                  ["mission", "weave"].join(""),
+                  ["mission", "weave", "-cli"].join(""),
+                  ["mission", "weave", "_env"].join(""),
+                  ["prefix", "mission", "weave", "client"].join(""),
+                ],
+                allowed: [
+                  ["mission", "weave", "protocol"].join(""),
+                  ["mission", "weave", "protocol", "_client"].join(""),
+                ],
+              },
             },
             {
               label: "retired decision-record shorthand",
@@ -106,49 +122,26 @@ jobs:
             },
           ];
 
-          const trackedPolicyMarker = "standalone-product-display-name";
-          const trackedProductRules = rules.filter((rule) => rule.trackedBootstrapRule);
+          const productRules = rules.filter((rule) => rule.policyCases);
 
           if (
-            trackedProductRules.length !== 2 ||
-            trackedProductRules.some(
+            productRules.length !== 2 ||
+            productRules.some(
               (rule) =>
-                !rule.pattern.test(rule.rejectedExample) ||
-                rule.pattern.test(rule.allowedExample),
+                rule.policyCases.rejected.some((value) => !rule.pattern.test(value)) ||
+                rule.policyCases.allowed.some((value) => rule.pattern.test(value)),
             )
           ) {
             throw new Error("Product display-name policy self-test failed.");
           }
 
-          let skipTrackedProductRule = false;
-          if ((process.env.REPOSITORY ?? "").endsWith("/.github")) {
-            const baseRef = process.env.BASE_REF ?? "";
-            if (!baseRef) {
-              throw new Error("Base ref is required for the policy repository.");
-            }
-
-            const baseWorkflow = execFileSync(
-              "git",
-              ["show", `origin/${baseRef}:.github/workflows/pr-title.yml`],
-              { encoding: "utf8" },
-            );
-            skipTrackedProductRule = !baseWorkflow.includes(trackedPolicyMarker);
-          }
-
           const failures = [];
 
-          function inspect(label, value, { trackedContent = false } = {}) {
+          function inspect(label, value) {
             String(value ?? "")
               .split(/\r?\n/u)
               .forEach((line, index) => {
                 for (const rule of rules) {
-                  if (
-                    trackedContent &&
-                    skipTrackedProductRule &&
-                    rule.trackedBootstrapRule
-                  ) {
-                    continue;
-                  }
                   if (rule.pattern.test(line)) {
                     failures.push(`${label}:${index + 1}: ${rule.label}`);
                   }
@@ -162,10 +155,10 @@ jobs:
             .filter(Boolean);
 
           for (const file of trackedFiles) {
-            inspect(`path:${file}`, file, { trackedContent: true });
+            inspect(`path:${file}`, file);
             const contents = fs.readFileSync(file);
             if (!contents.includes(0)) {
-              inspect(file, contents.toString("utf8"), { trackedContent: true });
+              inspect(file, contents.toString("utf8"));
             }
           }
 
