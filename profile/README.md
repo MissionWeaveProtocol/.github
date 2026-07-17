@@ -22,14 +22,28 @@ human approval.
 - [missionweaveprotocol](https://github.com/missionweaveprotocol/missionweaveprotocol) — normative
   specification, glossary, JSON Schemas, conformance vectors, and brand assets.
 - [python-sdk](https://github.com/missionweaveprotocol/python-sdk) — official Python
-  reference implementation, Agent runtime, Group gateway, Worker Scheduler, conformance runner,
-  storage adapters, and executable POC.
+  reference implementation with the full Agent runtime, Group gateway, Worker Scheduler,
+  conformance runner, storage adapters, and executable POC.
+- [go-sdk](https://github.com/missionweaveprotocol/go-sdk) — official Go protocol SDK with
+  protocol bindings and schema-and-vector conformance.
+- [typescript-sdk](https://github.com/missionweaveprotocol/typescript-sdk) — official TypeScript
+  protocol SDK with protocol bindings and schema-and-vector conformance.
+- [java-sdk](https://github.com/missionweaveprotocol/java-sdk) — official Java protocol SDK with
+  protocol bindings and schema-and-vector conformance.
+- [rust-sdk](https://github.com/missionweaveprotocol/rust-sdk) — official Rust protocol SDK with
+  protocol bindings and schema-and-vector conformance.
+- [cpp-sdk](https://github.com/missionweaveprotocol/cpp-sdk) — official C++ protocol SDK with
+  protocol bindings and schema-and-vector conformance.
 - [missionweaveprotocol.github.io](https://github.com/missionweaveprotocol/missionweaveprotocol.github.io)
   — official website and documentation repository, published at the
   [MissionWeaveProtocol website](https://missionweaveprotocol.github.io/).
 
 The protocol and its implementations are versioned independently. Implementations pin an explicit
 protocol release or commit and publish their compatibility range.
+
+Python is the full reference runtime. The Go, TypeScript, Java, Rust, and C++ SDKs currently focus
+on protocol bindings and schema-and-vector conformance; they do not claim full behavioral runtime
+conformance.
 
 ## Community
 

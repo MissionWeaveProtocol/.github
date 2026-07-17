@@ -22,8 +22,18 @@ coordinar la entrega mediante revisión basada en evidencias y aprobación human
 - [missionweaveprotocol](https://github.com/missionweaveprotocol/missionweaveprotocol) —
   especificación normativa, glosario, JSON Schema, vectores de conformidad y recursos de marca.
 - [python-sdk](https://github.com/missionweaveprotocol/python-sdk) — implementación de referencia
-  oficial en Python, runtime de Agent, gateway de Group, Worker Scheduler, ejecutor de conformidad,
-  adaptadores de almacenamiento y POC ejecutable.
+  oficial en Python con runtime de Agent completo, gateway de Group, Worker Scheduler, ejecutor de
+  conformidad, adaptadores de almacenamiento y POC ejecutable.
+- [go-sdk](https://github.com/missionweaveprotocol/go-sdk) — SDK oficial del protocolo para Go,
+  con bindings del protocolo y conformidad de schemas y vectores.
+- [typescript-sdk](https://github.com/missionweaveprotocol/typescript-sdk) — SDK oficial del
+  protocolo para TypeScript, con bindings del protocolo y conformidad de schemas y vectores.
+- [java-sdk](https://github.com/missionweaveprotocol/java-sdk) — SDK oficial del protocolo para
+  Java, con bindings del protocolo y conformidad de schemas y vectores.
+- [rust-sdk](https://github.com/missionweaveprotocol/rust-sdk) — SDK oficial del protocolo para
+  Rust, con bindings del protocolo y conformidad de schemas y vectores.
+- [cpp-sdk](https://github.com/missionweaveprotocol/cpp-sdk) — SDK oficial del protocolo para C++,
+  con bindings del protocolo y conformidad de schemas y vectores.
 - [missionweaveprotocol.github.io](https://github.com/missionweaveprotocol/missionweaveprotocol.github.io)
   — repositorio oficial del sitio web y la documentación, publicado en el
   [sitio web de MissionWeaveProtocol](https://missionweaveprotocol.github.io/).
@@ -31,6 +41,10 @@ coordinar la entrega mediante revisión basada en evidencias y aprobación human
 El protocolo y sus implementaciones se versionan de forma independiente. Las implementaciones
 fijan explícitamente una versión publicada o un commit del protocolo y publican su intervalo de
 compatibilidad.
+
+Python es el runtime de referencia completo. Los SDK de Go, TypeScript, Java, Rust y C++ se centran
+actualmente en los bindings del protocolo y la conformidad de schemas y vectores; no declaran una
+conformidad completa del comportamiento del runtime.
 
 ## Comunidad
 
