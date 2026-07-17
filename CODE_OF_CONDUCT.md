@@ -22,7 +22,7 @@ Maintainers may remove, edit, or reject contributions and may temporarily or per
 participation when behavior violates this code.
 
 Report conduct concerns privately through the
-[MissionWeave community repository](https://github.com/MissionWeaveProject/.github/security/advisories/new)
+[MissionWeave community repository](https://github.com/missionweaveprotocol/.github/security/advisories/new)
 and begin the report title with `Conduct report`. Include relevant links or screenshots and avoid
 sharing sensitive details publicly. Maintainers will review reports confidentially, avoid conflicts
 of interest, and take proportionate action.
