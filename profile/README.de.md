@@ -25,8 +25,19 @@ Evidence-basierte Prüfung und menschliche Approval koordinieren.
   normative Spezifikation, Glossar, JSON Schemas, Konformitätsvektoren und
   Markenressourcen.
 - [python-sdk](https://github.com/missionweaveprotocol/python-sdk) — offizielle
-  Python-Referenzimplementierung, Agent Runtime, Group Gateway, Worker Scheduler,
-  Konformitäts-Runner, Speicheradapter und ausführbarer POC.
+  Python-Referenzimplementierung mit vollständiger Agent Runtime, Group Gateway,
+  Worker Scheduler, Konformitäts-Runner, Speicheradaptern und ausführbarem POC.
+- [go-sdk](https://github.com/missionweaveprotocol/go-sdk) — offizielles Go
+  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
+- [typescript-sdk](https://github.com/missionweaveprotocol/typescript-sdk) —
+  offizielles TypeScript Protocol SDK mit Protokoll-Bindings sowie Schema- und
+  Vektorkonformität.
+- [java-sdk](https://github.com/missionweaveprotocol/java-sdk) — offizielles Java
+  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
+- [rust-sdk](https://github.com/missionweaveprotocol/rust-sdk) — offizielles Rust
+  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
+- [cpp-sdk](https://github.com/missionweaveprotocol/cpp-sdk) — offizielles C++
+  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
 - [missionweaveprotocol.github.io](https://github.com/missionweaveprotocol/missionweaveprotocol.github.io)
   — offizielles Repository für Website und Dokumentation, veröffentlicht auf der
   [MissionWeaveProtocol-Website](https://missionweaveprotocol.github.io/).
@@ -34,6 +45,11 @@ Evidence-basierte Prüfung und menschliche Approval koordinieren.
 Das Protokoll und seine Implementierungen werden unabhängig voneinander
 versioniert. Implementierungen pinnen ein ausdrückliches Protokoll-Release oder
 einen Commit und veröffentlichen ihren Kompatibilitätsbereich.
+
+Python ist die vollständige Referenz-Runtime. Die SDKs für Go, TypeScript, Java,
+Rust und C++ konzentrieren sich derzeit auf Protokoll-Bindings sowie Schema- und
+Vektorkonformität; sie beanspruchen keine vollständige verhaltensbezogene
+Runtime-Konformität.
 
 ## Community
 
