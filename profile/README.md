@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://missionweaveproject.github.io/missionweaveprotocol.github.io/">Official website and documentation</a></strong>
+  <strong><a href="https://missionweaveprotocol.github.io/">Official website and documentation</a></strong>
 </p>
 
 MissionWeave is a group-oriented protocol for coordinated, accountable collaboration among AI
@@ -17,14 +17,14 @@ human approval.
 
 ## Repositories
 
-- [missionweaveprotocol](https://github.com/MissionWeaveProject/missionweaveprotocol) — normative
+- [missionweaveprotocol](https://github.com/missionweaveprotocol/missionweaveprotocol) — normative
   specification, glossary, JSON Schemas, conformance vectors, and brand assets.
-- [python-sdk](https://github.com/MissionWeaveProject/python-sdk) — official Python
+- [python-sdk](https://github.com/missionweaveprotocol/python-sdk) — official Python
   reference implementation, Agent runtime, Group gateway, Worker Scheduler, conformance runner,
   storage adapters, and executable POC.
-- [missionweaveprotocol.github.io](https://github.com/MissionWeaveProject/missionweaveprotocol.github.io)
+- [missionweaveprotocol.github.io](https://github.com/missionweaveprotocol/missionweaveprotocol.github.io)
   — official website and documentation repository, published at the
-  [MissionWeave website](https://missionweaveproject.github.io/missionweaveprotocol.github.io/).
+  [MissionWeave website](https://missionweaveprotocol.github.io/).
 
 The protocol and its implementations are versioned independently. Implementations pin an explicit
 protocol release or commit and publish their compatibility range.

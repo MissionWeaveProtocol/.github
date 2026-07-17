@@ -5,9 +5,9 @@ Thank you for helping build MissionWeave.
 ## Choose the right repository
 
 - Protocol semantics, wire behavior, schemas, conformance vectors, or terminology belong in
-  [missionweaveprotocol](https://github.com/MissionWeaveProject/missionweaveprotocol).
+  [missionweaveprotocol](https://github.com/missionweaveprotocol/missionweaveprotocol).
 - Python interfaces, runtime behavior, storage, scheduling, gateway behavior, packaging, or the POC
-  belong in [python-sdk](https://github.com/MissionWeaveProject/python-sdk).
+  belong in [python-sdk](https://github.com/missionweaveprotocol/python-sdk).
 
 When a change affects both repositories, start with the protocol change. The Python implementation
 should then pin the resulting protocol commit or release in a separate change.
