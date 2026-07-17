@@ -1,6 +1,6 @@
-# Contributing to MissionWeave
+# Contributing to MissionWeaveProtocol
 
-Thank you for helping build MissionWeave.
+Thank you for helping build MissionWeaveProtocol.
 
 ## Choose the right repository
 
@@ -20,7 +20,7 @@ should then pin the resulting protocol commit or release in a separate change.
 4. Link the issue or explain the motivation directly.
 5. Update tests, documentation, schemas, and vectors when applicable.
 6. State compatibility, migration, and security effects explicitly.
-7. Use the current MissionWeave repository names and terminology; automated policy checks reject
+7. Use the current MissionWeaveProtocol repository names and terminology; automated policy checks reject
    retired vocabulary.
 
 ## Pull request titles
@@ -32,7 +32,7 @@ Pull request titles must follow
 <type>[optional scope][!]: <description>
 ```
 
-Use a lowercase type and, when present, a lowercase scope. MissionWeave does not impose a closed
+Use a lowercase type and, when present, a lowercase scope. MissionWeaveProtocol does not impose a closed
 type list; `feat` and `fix` retain their Conventional Commits meaning, while types such as `docs`,
 `test`, `refactor`, `build`, and `chore` are also appropriate.
 

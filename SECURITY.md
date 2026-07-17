@@ -1,6 +1,6 @@
 # Security Policy
 
-Thank you for helping keep MissionWeave and its ecosystem secure.
+Thank you for helping keep MissionWeaveProtocol and its ecosystem secure.
 
 ## Reporting a vulnerability
 
