@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Check Conventional Commits format
         env:
@@ -45,8 +47,10 @@ jobs:
 
       - name: Check repository vocabulary
         env:
+          BASE_REF: ${{ github.base_ref }}
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_BODY: ${{ github.event.pull_request.body }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           node <<'NODE'
           const fs = require("fs");
@@ -65,12 +69,22 @@ jobs:
               ),
             },
             {
-              label: "retired protocol repository casing",
-              pattern: new RegExp(["MissionWeave", "Protocol"].join(""), "u"),
+              label: "incomplete product display name",
+              pattern: new RegExp(`\\b${["Mission", "Weave"].join("")}\\b`, "u"),
+              trackedBootstrapRule: true,
+              rejectedExample: ["Mission", "Weave"].join(""),
+              allowedExample: ["Mission", "Weave", "Protocol"].join(""),
+            },
+            {
+              label: "incomplete product machine identifier",
+              pattern: new RegExp(`\\b${["mission", "weave"].join("")}\\b`, "u"),
+              trackedBootstrapRule: true,
+              rejectedExample: ["mission", "weave"].join(""),
+              allowedExample: ["mission", "weave", "protocol"].join(""),
             },
             {
               label: "retired Python repository name",
-              pattern: new RegExp(["MissionWeave", "Python"].join(""), "u"),
+              pattern: new RegExp(["Mission", "Weave", "Python"].join(""), "u"),
             },
             {
               label: "retired decision-record shorthand",
@@ -92,13 +106,49 @@ jobs:
             },
           ];
 
+          const trackedPolicyMarker = "standalone-product-display-name";
+          const trackedProductRules = rules.filter((rule) => rule.trackedBootstrapRule);
+
+          if (
+            trackedProductRules.length !== 2 ||
+            trackedProductRules.some(
+              (rule) =>
+                !rule.pattern.test(rule.rejectedExample) ||
+                rule.pattern.test(rule.allowedExample),
+            )
+          ) {
+            throw new Error("Product display-name policy self-test failed.");
+          }
+
+          let skipTrackedProductRule = false;
+          if ((process.env.REPOSITORY ?? "").endsWith("/.github")) {
+            const baseRef = process.env.BASE_REF ?? "";
+            if (!baseRef) {
+              throw new Error("Base ref is required for the policy repository.");
+            }
+
+            const baseWorkflow = execFileSync(
+              "git",
+              ["show", `origin/${baseRef}:.github/workflows/pr-title.yml`],
+              { encoding: "utf8" },
+            );
+            skipTrackedProductRule = !baseWorkflow.includes(trackedPolicyMarker);
+          }
+
           const failures = [];
 
-          function inspect(label, value) {
+          function inspect(label, value, { trackedContent = false } = {}) {
             String(value ?? "")
               .split(/\r?\n/u)
               .forEach((line, index) => {
                 for (const rule of rules) {
+                  if (
+                    trackedContent &&
+                    skipTrackedProductRule &&
+                    rule.trackedBootstrapRule
+                  ) {
+                    continue;
+                  }
                   if (rule.pattern.test(line)) {
                     failures.push(`${label}:${index + 1}: ${rule.label}`);
                   }
@@ -112,10 +162,10 @@ jobs:
             .filter(Boolean);
 
           for (const file of trackedFiles) {
-            inspect(`path:${file}`, file);
+            inspect(`path:${file}`, file, { trackedContent: true });
             const contents = fs.readFileSync(file);
             if (!contents.includes(0)) {
-              inspect(file, contents.toString("utf8"));
+              inspect(file, contents.toString("utf8"), { trackedContent: true });
             }
           }
 
