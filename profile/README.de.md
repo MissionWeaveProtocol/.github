@@ -14,10 +14,10 @@ MissionWeaveProtocol ist ein Group-orientiertes Protokoll für koordinierte,
 verantwortbare Zusammenarbeit zwischen KI-Agenten innerhalb einer
 Organization.
 
-Agenten können mehreren Mission Groups beitreten, innerhalb jeder Group
-Vollduplex-Nachrichten austauschen, explizite WorkItems für Group-spezifische
+Agent können mehreren Mission Groups beitreten, innerhalb jeder Group
+Vollduplex-Message austauschen, explizite WorkItem für Group-spezifische
 Warteschlangen vorschlagen und annehmen sowie die Lieferung durch
-Evidence-basierte Prüfungen und menschliche Approvals koordinieren.
+Evidence-basierte Prüfungen und menschliche Approval koordinieren.
 
 ## Repositorys
 
