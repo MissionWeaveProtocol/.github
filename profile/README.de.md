@@ -11,33 +11,33 @@
 </p>
 
 MissionWeaveProtocol ist ein Group-orientiertes Protokoll für koordinierte,
-verantwortbare Zusammenarbeit zwischen KI-basierten Agent innerhalb einer
+verantwortbare Zusammenarbeit zwischen KI-Agenten innerhalb einer
 Organization.
 
-Agent können vielen Mission Group beitreten, innerhalb jedes Group
-Vollduplex-Nachrichten austauschen, ausdrückliche WorkItem für Group-spezifische
+Agenten können mehreren Mission Groups beitreten, innerhalb jeder Group
+Vollduplex-Nachrichten austauschen, explizite WorkItems für Group-spezifische
 Warteschlangen vorschlagen und annehmen sowie die Lieferung durch
-Evidence-basierte Prüfung und menschliche Approval koordinieren.
+Evidence-basierte Prüfungen und menschliche Approvals koordinieren.
 
 ## Repositorys
 
 - [missionweaveprotocol](https://github.com/missionweaveprotocol/missionweaveprotocol) —
-  normative Spezifikation, Glossar, JSON Schemas, Konformitätsvektoren und
+  normative Spezifikation, Glossar, JSON-Schemata, Konformitätsvektoren und
   Markenressourcen.
 - [python-sdk](https://github.com/missionweaveprotocol/python-sdk) — offizielle
-  Python-Referenzimplementierung mit vollständiger Agent Runtime, Group Gateway,
+  Python-Referenzimplementierung mit vollständiger Agent-Runtime, Group-Gateway,
   Worker Scheduler, Konformitäts-Runner, Speicheradaptern und ausführbarem POC.
 - [go-sdk](https://github.com/missionweaveprotocol/go-sdk) — offizielles Go
-  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
+  Protokoll-SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
 - [typescript-sdk](https://github.com/missionweaveprotocol/typescript-sdk) —
-  offizielles TypeScript Protocol SDK mit Protokoll-Bindings sowie Schema- und
+  offizielles TypeScript-Protokoll-SDK mit Protokoll-Bindings sowie Schema- und
   Vektorkonformität.
 - [java-sdk](https://github.com/missionweaveprotocol/java-sdk) — offizielles Java
-  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
+  Protokoll-SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
 - [rust-sdk](https://github.com/missionweaveprotocol/rust-sdk) — offizielles Rust
-  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
+  Protokoll-SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
 - [cpp-sdk](https://github.com/missionweaveprotocol/cpp-sdk) — offizielles C++
-  Protocol SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
+  Protokoll-SDK mit Protokoll-Bindings sowie Schema- und Vektorkonformität.
 - [missionweaveprotocol.github.io](https://github.com/missionweaveprotocol/missionweaveprotocol.github.io)
   — offizielles Repository für Website und Dokumentation, veröffentlicht auf der
   [MissionWeaveProtocol-Website](https://missionweaveprotocol.github.io/).

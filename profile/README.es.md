@@ -14,7 +14,7 @@ MissionWeaveProtocol es un protocolo orientado a grupos para la colaboración co
 rendición de cuentas entre Agent de IA dentro de una Organization.
 
 Cada Agent puede unirse a varios Mission Group, comunicarse en modo full-duplex dentro de cada
-Group, proponer y aceptar elementos WorkItem explícitos en colas específicas de cada Group, y
+Group, proponer y aceptar WorkItem explícitos en colas específicas de cada Group, y
 coordinar la entrega mediante revisión basada en evidencias y aprobación humana.
 
 ## Repositorios
