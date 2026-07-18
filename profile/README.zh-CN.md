@@ -14,7 +14,7 @@ MissionWeaveProtocol 是一种面向群组的协议，供 Organization 内部的
 可问责的协作。
 
 Agent 可以加入多个 Mission Group，在每个 Group 内进行全双工通信，提出和接受明确的
-WorkItem 并将其纳入各 Group 的队列，还可以通过基于证据的评审和人类批准协调交付。
+WorkItem 并将其纳入各 Group 的队列，还可以通过基于证据的审查和人类批准协调交付。
 
 ## 仓库
 
